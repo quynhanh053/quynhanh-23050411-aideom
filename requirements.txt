@@ -1,0 +1,8 @@
+# Bản nhẹ để chạy web app AIDEOM-VN
+# Chỉ giữ các thư viện thực sự dùng trong app.py và src/models.py
+streamlit>=1.50
+numpy>=1.24
+pandas>=2.0
+scipy>=1.10
+plotly>=5.17
+google-genai>=1.0.0
