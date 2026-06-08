@@ -161,22 +161,18 @@ if page == "Trang chủ":
         with st.expander(level, expanded=level.startswith("Cấp độ DỄ")):
             show_df(pd.DataFrame(rows, columns=["Bài", "Nội dung chính"]), height=150)
 
-    with st.expander("Bảng kiểm đơn vị theo đề và file dữ liệu", expanded=False):
-        unit_rows = [
-            ("Bài 1", "Y, K: nghìn tỷ VND; L: triệu lao động; D/H: %; AI: nghìn DN/năng lực; MAPE: %"),
-            ("Bài 2", "x và Z: nghìn tỷ VND"),
-            ("Bài 3", "Tăng trưởng %, năng suất triệu VND/LĐ, xuất khẩu tỷ USD, việc làm triệu LĐ; Priority không có đơn vị"),
-            ("Bài 4", "x và Z: tỷ VND GDP gain; Digital Index 0-100"),
-            ("Bài 5", "Chi phí, lợi ích NPV, ngân sách năm 1-2/3-5: tỷ VND"),
-            ("Bài 6", "GRDP/người triệu VND, FDI tỷ USD, R&D/GRDP %, TOPSIS C* không có đơn vị"),
-            ("Bài 7", "x và f1: tỷ VND; f2-f4 là chỉ số mô phỏng theo hệ số"),
-            ("Bài 8", "Y, C, K và đầu tư: nghìn tỷ VND; welfare không phải tiền tệ"),
-            ("Bài 9", "Ngân sách: tỷ VND; NewJob/DisplacedJob/NetJob: số việc làm mô phỏng"),
-            ("Bài 10", "x, y, SP/EV/VSS/EVPI: tỷ VND GDP gain kỳ vọng"),
-            ("Bài 11", "Hành động: tỷ trọng phân bổ; reward là điểm welfare mô phỏng"),
-            ("Bài 12", "M1 GDP nghìn tỷ VND; M3/GDP_gain tỷ VND; phát thải/rủi ro là chỉ số mô phỏng"),
-        ]
-        show_df(pd.DataFrame(unit_rows, columns=["Bài", "Đơn vị chính cần đọc"]), height=430)
+   with st.expander("Phạm vi phân tích của web app", expanded=False):
+        st.markdown("""
+        Web app AIDEOM-VN được xây dựng để mô phỏng và phân tích 12 bài toán mô hình ra quyết định trong bối cảnh phát triển kinh tế Việt Nam trong kỷ nguyên AI.
+
+        Dữ liệu sử dụng gồm 3 nhóm chính:
+
+        - **Dữ liệu vĩ mô Việt Nam 2020–2025**: GDP, vốn tích lũy, lao động, kinh tế số, năng lực AI và nhân lực số.
+        - **Dữ liệu 10 ngành kinh tế năm 2024**: tăng trưởng, năng suất, xuất khẩu, việc làm, AI readiness và rủi ro tự động hóa.
+        - **Dữ liệu 6 vùng kinh tế - xã hội năm 2024**: GRDP/người, FDI, Digital Index, AI readiness, lao động qua đào tạo, R&D, Internet và Gini.
+
+        Mỗi bài toán bao gồm mô hình định lượng, bảng kết quả, biểu đồ trực quan và phần phân tích kết quả bằng Gemini API hoặc AI nội bộ.
+        """)
 
 elif page.startswith("Bài 1 —"):
     hero("Bài 1 — Hàm sản xuất Cobb-Douglas mở rộng", "Ước lượng TFP, so sánh GDP thực tế - dự báo, phân rã tăng trưởng và mô phỏng GDP 2030.", ["Cấp độ dễ", "Growth accounting", "numpy/pandas"])
