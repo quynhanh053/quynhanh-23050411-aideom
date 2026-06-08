@@ -162,7 +162,7 @@ if page == "Trang chủ":
             show_df(pd.DataFrame(rows, columns=["Bài", "Nội dung chính"]), height=150)
 
    with st.expander("Phạm vi phân tích của web app", expanded=False):
-        st.markdown("""
+       st.markdown("""
         Web app AIDEOM-VN được xây dựng để mô phỏng và phân tích 12 bài toán mô hình ra quyết định trong bối cảnh phát triển kinh tế Việt Nam trong kỷ nguyên AI.
 
         Dữ liệu sử dụng gồm 3 nhóm chính:
